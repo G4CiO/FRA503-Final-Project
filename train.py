@@ -25,6 +25,8 @@ class RewardLoggingCallback(BaseCallback):
         self.ep_slot_bonus = 0
         self.ep_heading_penalty = 0  # Add heading penalty logging
 
+        self.distance = 0
+
     def _on_step(self) -> bool:
         reward = self.locals.get('rewards')[0]  # for vectorized env
         done = self.locals.get('dones')[0]
@@ -37,7 +39,8 @@ class RewardLoggingCallback(BaseCallback):
         self.ep_lane_penalty += info.get('ep_lane_penalty', 0)
         self.ep_slot_bonus += info.get('ep_slot_bonus', 0)
         self.ep_heading_penalty += info.get('ep_heading_penalty', 0)  # Add heading penalty
-        self.ep_success = info.get('ep_success', 0)
+        self.ep_success += info.get('ep_success', 0)
+        self.distance = info.get('distance', 0)
 
         if done:
             self.ep_rewards.append(self.current_ep_reward)
@@ -59,6 +62,7 @@ class RewardLoggingCallback(BaseCallback):
             self.ep_slot_bonus = 0
             self.ep_heading_penalty = 0
             self.ep_success = 0
+            self.distance = 0
 
         return True
 
@@ -116,9 +120,9 @@ def play():
     done = False
     while True:
         action, _ = model.predict(obs, deterministic=True)
-        obs, reward, terminated, truncated, info = env.step(action)
+        obs, reward, terminated, info = env.step(action)
         env.render()
-        done = terminated[0] or truncated[0]
+        done = terminated[0] 
         if done:
             obs = env.reset()
 
