@@ -178,7 +178,7 @@ class ParkingEnv(gym.Env):
         # Calculate Euclidean distance (in pixels) between car center and parking slot center
         # This distance is used in distance-based reward (normalized by d_max)
         self.d = math.hypot(self.car.cx - SLOT_CENTER[0], self.car.cy - SLOT_CENTER[1])
-        R_d = -d / self.d_max  # Negative normalized distance reward (closer is better)
+        R_d = -self.d / self.d_max  # Negative normalized distance reward (closer is better)
 
         # ----------- Angle / Heading calculation -----------
         desired_heading = -math.pi / 2  # Desired heading aligned with parking slot (-90 degrees)
@@ -225,7 +225,7 @@ class ParkingEnv(gym.Env):
         self.ep_heading_penalty += heading_penalty
 
         # ----------- Success condition -----------
-        success = (d <= 0.1 * PX_PER_M) and (abs(math.degrees(angle_diff)) <= 10)
+        success = (self.d <= 0.1 * PX_PER_M) and (abs(math.degrees(angle_diff)) <= 10)
         SUCCESS_REWARD = 100000.0
         if success:
             reward += SUCCESS_REWARD
