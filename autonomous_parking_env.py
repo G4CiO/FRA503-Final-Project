@@ -227,7 +227,6 @@ class ParkingEnv(gym.Env):
 
         # ----------- Success condition -----------
         success = (self.d <= 0.1 * PX_PER_M) and (abs(math.degrees(angle_diff)) <= 10)
-        success = (self.d <= 0.1 * PX_PER_M) and (abs(math.degrees(angle_diff)) <= 10)
         SUCCESS_REWARD = 100000.0
         if success:
             reward += SUCCESS_REWARD
