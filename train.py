@@ -6,6 +6,8 @@ from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.callbacks import BaseCallback
 from autonomous_parking_env import ParkingEnv
+import wandb
+wandb.login(key="88baa274f550d2a9eee583bbb7bef8d179637368")
 
 def make_env(render=False):
     def _init():
@@ -24,7 +26,7 @@ class RewardLoggingCallback(BaseCallback):
         self.ep_lane_penalty = 0
         self.ep_slot_bonus = 0
         self.ep_heading_penalty = 0  # Add heading penalty logging
-
+        self.ep_success = 0
         self.distance = 0
 
     def _on_step(self) -> bool:
@@ -52,6 +54,11 @@ class RewardLoggingCallback(BaseCallback):
             print(f"  Slot bonus sum: {self.ep_slot_bonus:.2f}")
             print(f"  Heading penalty sum: {self.ep_heading_penalty:.2f}")  # Log heading penalty
             print(f"  Success: {self.ep_success:.2f}")
+
+            wandb.log({
+                "total_reward": self.current_ep_reward,
+                "distance": self.distance,
+            })
 
             # Reset counters for next episode
             self.current_ep_reward = 0
@@ -98,6 +105,9 @@ def train(timesteps: int, render=False, continue_training=False):
 
     callback = RewardLoggingCallback()
 
+    name_train = 'DDPG_1'
+    wandb.init(project="Final_Project", name=name_train)
+
     print("Starting training...")
     total_steps = 0
     while total_steps < timesteps:
@@ -111,6 +121,7 @@ def train(timesteps: int, render=False, continue_training=False):
 
     model.save("ddpg_parking_li_long.zip")
     env.close()
+    wandb.finish()
 
 
 def play():

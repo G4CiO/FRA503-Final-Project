@@ -1,0 +1,32 @@
+Starting training...
+[2KTraceback (most recent call last):━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+[2K  File "c:\D\Sheet_Lecture\DRL\FRA503-Final-Project\train.py", line 152, in <module>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    train(args.timesteps, args.render, args.continue_training)
+[2K  File "c:\D\Sheet_Lecture\DRL\FRA503-Final-Project\train.py", line 114, in train━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    model.learn(total_timesteps=1000, reset_num_timesteps=False, progress_bar=True, callback=callback)
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\ddpg\ddpg.py", line 123, in learn━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    return super().learn(
+           ^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\td3\td3.py", line 222, in learn━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    return super().learn(
+           ^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\common\off_policy_algorithm.py", line 328, in learn0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    rollout = self.collect_rollouts(
+              ^^^^^^^^^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\common\off_policy_algorithm.py", line 568, in collect_rolloutsm [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    if not callback.on_step():
+           ^^^^^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\common\callbacks.py", line 114, in on_step[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    return self._on_step()
+           ^^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\common\callbacks.py", line 223, in _on_step0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    continue_training = callback.on_step() and continue_training
+                        ^^^^^^^^^^^^^^^^^^
+[2K  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\stable_baselines3\common\callbacks.py", line 114, in on_step[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    return self._on_step()
+           ^^^^^^^^^^^^^^^
+[2K  File "c:\D\Sheet_Lecture\DRL\FRA503-Final-Project\train.py", line 44, in _on_step━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+    self.ep_success += info.get('ep_success', 0)
+    ^^^^^^^^^^^^^^^
+[2KAttributeError: 'RewardLoggingCallback' object has no attribute 'ep_success'━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
+[2K[35m   0%[0m [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0/1,000 [0m [ [33m0:00:00[0m < [36m-:--:--[0m , [31m? it/s[0m ]
