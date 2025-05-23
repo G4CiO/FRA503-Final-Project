@@ -40,7 +40,7 @@ class RewardLoggingCallback(BaseCallback):
         self.ep_slot_bonus += info.get('ep_slot_bonus', 0)
         self.ep_heading_penalty += info.get('ep_heading_penalty', 0)  # Add heading penalty
         self.ep_success += info.get('ep_success', 0)
-        self.distance = info.get('distance', 0)
+        self.distance = info.get('distance_in_meters', 0)
 
         if done:
             self.ep_rewards.append(self.current_ep_reward)

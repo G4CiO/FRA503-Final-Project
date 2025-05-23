@@ -109,7 +109,7 @@ class ParkingEnv(gym.Env):
         self.ep_heading_penalty = 0.0 # Penalty for bad heading alignment
 
         self.d = 0.0
-
+        self.distance_in_meters = 0.0  # Distance to parking slot center in meters
 
     def _make_wall_mask(self):
         # Draw the parking boundaries on a transparent surface for collision detection
@@ -179,6 +179,7 @@ class ParkingEnv(gym.Env):
         # This distance is used in distance-based reward (normalized by d_max)
         self.d = math.hypot(self.car.cx - SLOT_CENTER[0], self.car.cy - SLOT_CENTER[1])
         R_d = -self.d / self.d_max  # Negative normalized distance reward (closer is better)
+        self.distance_in_meters = self.d / PX_PER_M  # Convert to meters for logging
 
         # ----------- Angle / Heading calculation -----------
         desired_heading = -math.pi / 2  # Desired heading aligned with parking slot (-90 degrees)
@@ -258,7 +259,7 @@ class ParkingEnv(gym.Env):
             "ep_lane_penalty": self.ep_lane_penalty,
             "ep_slot_bonus": self.ep_slot_bonus,
             "ep_heading_penalty": self.ep_heading_penalty,
-            "distance": self.d,
+            "distance": self.distance_in_meters,
         }
 
         return obs, reward, terminated, truncated, info
