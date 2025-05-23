@@ -217,6 +217,7 @@ class ParkingEnv(gym.Env):
         # ----------- Aggregate total reward -----------
         reward = distance_reward + angle_reward + penalty_reward + lane_penalty + slot_bonus + heading_penalty
 
+
         # ----------- Accumulate each reward component for logging --------
         self.ep_distance_reward += distance_reward
         self.ep_angle_reward += angle_reward
@@ -259,7 +260,7 @@ class ParkingEnv(gym.Env):
             "ep_lane_penalty": self.ep_lane_penalty,
             "ep_slot_bonus": self.ep_slot_bonus,
             "ep_heading_penalty": self.ep_heading_penalty,
-            "distance": self.distance_in_meters,
+            "distance_in_meters": self.distance_in_meters,
         }
 
         return obs, reward, terminated, truncated, info

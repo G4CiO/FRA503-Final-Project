@@ -105,11 +105,12 @@ def train(timesteps: int, render=False, continue_training=False):
 
     callback = RewardLoggingCallback()
 
-    name_train = 'DDPG_1'
+    name_train = 'DDPG_50000_steps_2'
     wandb.init(project="Final_Project", name=name_train)
 
     print("Starting training...")
     total_steps = 0
+    count = 0
     while total_steps < timesteps:
         model.learn(total_timesteps=1000, reset_num_timesteps=False, progress_bar=True, callback=callback)
         total_steps += 1000
@@ -118,6 +119,11 @@ def train(timesteps: int, render=False, continue_training=False):
         frac = max(0, 1 - total_steps / timesteps)
         noise.sigma = sigma_end + frac * (sigma_start - sigma_end)
         print(f"Step: {total_steps}, Noise Sigma: {noise.sigma}")
+        count += 1
+        wandb.log({
+            "count": count,
+        })
+
 
     model.save("ddpg_parking_li_long.zip")
     env.close()

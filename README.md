@@ -219,9 +219,30 @@ def play():
 - The agent's actions are predicted based on current state.
 - The environment resets when parking is successful or fails, allowing continuous testing and visualization.
 
-## **6. Result**
-
+## **6. Experiment & Result**
+### 6.1 Experiment
+- **Experiment 1:** Comparison of the results obtained from the Original Reward function and the New Reward function.
+- **Hypothesis:** The new reward function can provide better results than the old reward function.
+- **Objective:** Compare the results obtained from Original Reward function and New Reward function
+- **Independent variable:** Reward function
+- **Dependent variable:** Total reward, Distance between car and parking spot
+- **Control variable:** Number of timesteps = 50,000 timesteps
+### 6.2 Result
+#### 6.2.1 Original reward term
+- train
+https://github.com/user-attachments/assets/ae4987cc-429d-4d0e-bdd8-088f47deef65
+- play
+https://github.com/user-attachments/assets/b4c545d4-a183-4e70-a5ba-18f9597c3a0c
+#### 6.2.2 Modify & Adjustment reward term
+- train
+https://github.com/user-attachments/assets/6d92c1f3-7a16-4704-ae48-b37cae11e4d6
+- play
+https://github.com/user-attachments/assets/0da0a02e-4382-43b4-a60e-e926fe707431
 ## **7. Analysis**
-
+![total_reward](image/total_reward.png)
+![distance](image/distance.png)
+- From the results, it was found that the new reward function can give better results than the old reward function because it tries to approach the target more than the old one.
+- The reward value obtained from the new reward function is higher. The sharp point is when the car can park in the parking lot.
+- The distance value obtained from the new reward function is lower than the old one, meaning that the car tries to move closer to the parking spot.
 ## **8. Reference**
 - Li Junzuo and Long Qiang. "An Automatic Parking Model Based on Deep Reinforcement Learning." *J. Phys.: Conf. Ser.*, vol. 1883, no. 012111, 2021. [Link to document](doc/An_Automatic_Parking_Model_Based_on_Deep_Reinforce.pdf)

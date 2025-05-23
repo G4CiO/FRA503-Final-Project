@@ -1,0 +1,891 @@
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_setup.py:_flush():70] Current SDK version is 0.19.11
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_setup.py:_flush():70] Configure stats pid to 45172
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_setup.py:_flush():70] Loading settings from C:\Users\natth\.config\wandb\settings
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_setup.py:_flush():70] Loading settings from C:\D\Sheet_Lecture\DRL\FRA503-Final-Project\wandb\settings
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_setup.py:_flush():70] Loading settings from environment variables
+2025-05-23 07:12:50,790 INFO    MainThread:45172 [wandb_init.py:setup_run_log_directory():724] Logging user logs to C:\D\Sheet_Lecture\DRL\FRA503-Final-Project\wandb\run-20250523_071250-tp9qfqtj\logs\debug.log
+2025-05-23 07:12:50,791 INFO    MainThread:45172 [wandb_init.py:setup_run_log_directory():725] Logging internal logs to C:\D\Sheet_Lecture\DRL\FRA503-Final-Project\wandb\run-20250523_071250-tp9qfqtj\logs\debug-internal.log
+2025-05-23 07:12:50,791 INFO    MainThread:45172 [wandb_init.py:init():852] calling init triggers
+2025-05-23 07:12:50,791 INFO    MainThread:45172 [wandb_init.py:init():857] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2025-05-23 07:12:50,791 INFO    MainThread:45172 [wandb_init.py:init():893] starting backend
+2025-05-23 07:12:50,791 INFO    MainThread:45172 [wandb_init.py:init():897] sending inform_init request
+2025-05-23 07:12:50,833 INFO    MainThread:45172 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=spawn, using: spawn
+2025-05-23 07:12:50,833 INFO    MainThread:45172 [wandb_init.py:init():907] backend started and connected
+2025-05-23 07:12:50,835 INFO    MainThread:45172 [wandb_init.py:init():1005] updated telemetry
+2025-05-23 07:12:50,883 INFO    MainThread:45172 [wandb_init.py:init():1029] communicating run to backend with 90.0 second timeout
+2025-05-23 07:12:52,539 INFO    MainThread:45172 [wandb_init.py:init():1104] starting run threads in backend
+2025-05-23 07:12:52,806 INFO    MainThread:45172 [wandb_run.py:_console_start():2573] atexit reg
+2025-05-23 07:12:52,807 INFO    MainThread:45172 [wandb_run.py:_redirect():2421] redirect: wrap_raw
+2025-05-23 07:12:52,807 INFO    MainThread:45172 [wandb_run.py:_redirect():2490] Wrapping output streams.
+2025-05-23 07:12:52,807 INFO    MainThread:45172 [wandb_run.py:_redirect():2513] Redirects installed.
+2025-05-23 07:12:52,810 INFO    MainThread:45172 [wandb_init.py:init():1150] run started, returning control to user process
+2025-05-23 07:15:36,832 INFO    MsgRouterThr:45172 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.
+2025-05-23 07:15:36,950 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,059 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,163 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,268 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,381 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,496 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,606 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,718 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,829 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:37,933 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,038 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,145 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,252 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,440 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,545 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,651 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,757 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,862 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:38,968 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,071 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,178 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,291 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,400 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,506 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,612 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,717 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,823 ERROR   Thread-23 :45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
+2025-05-23 07:15:39,824 ERROR   MainThread:45172 [redirect.py:_on_write():664] [no run ID] error in stdout callback
+Traceback (most recent call last):
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\redirect.py", line 662, in _on_write
+    cb(written_data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 2494, in <lambda>
+    lambda data: self._console_raw_callback("stdout", data),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 464, in wrapper_fn
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\wandb_run.py", line 1639, in _console_raw_callback
+    self._backend.interface.publish_output_raw(name, data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface.py", line 762, in publish_output_raw
+    self._publish_output_raw(o)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_shared.py", line 38, in _publish_output_raw
+    self._publish(rec)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\interface\interface_sock.py", line 39, in _publish
+    self._sock_client.send_record_publish(record)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 174, in send_record_publish
+    self.send_server_request(server_req)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 154, in send_server_request
+    self._send_message(msg)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 151, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "C:\Users\natth\AppData\Roaming\Python\Python312\site-packages\wandb\sdk\lib\sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+ConnectionAbortedError: [WinError 10053] An established connection was aborted by the software in your host machine
