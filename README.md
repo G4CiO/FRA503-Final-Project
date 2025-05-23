@@ -230,13 +230,17 @@ def play():
 ### 6.2 Result
 #### 6.2.1 Original reward term
 - train
+
 https://github.com/user-attachments/assets/ae4987cc-429d-4d0e-bdd8-088f47deef65
 - play
+
 https://github.com/user-attachments/assets/b4c545d4-a183-4e70-a5ba-18f9597c3a0c
 #### 6.2.2 Modify & Adjustment reward term
 - train
+
 https://github.com/user-attachments/assets/6d92c1f3-7a16-4704-ae48-b37cae11e4d6
 - play
+
 https://github.com/user-attachments/assets/0da0a02e-4382-43b4-a60e-e926fe707431
 ## **7. Analysis**
 ![total_reward](image/total_reward.png)
