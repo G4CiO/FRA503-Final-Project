@@ -222,3 +222,6 @@ def play():
 ## **6. Result**
 
 ## **7. Analysis**
+
+## **8. Reference**
+- Li Junzuo and Long Qiang. "An Automatic Parking Model Based on Deep Reinforcement Learning." *J. Phys.: Conf. Ser.*, vol. 1883, no. 012111, 2021. [Link to document](doc/An_Automatic_Parking_Model_Based_on_Deep_Reinforce.pdf)
